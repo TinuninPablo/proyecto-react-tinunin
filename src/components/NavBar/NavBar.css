@@ -1,15 +1,26 @@
+div{
+    background-color: black;
+    width: 100%;
+}
+
 .nav{
     list-style-type: none;
-    margin: 0;
+    margin: 1%;
     padding: 0;
     display: flex;
-    justify-content:space-between;
-    background-color:white ;
-    color:black;
+    justify-content:space-evenly;
+    background-color:black ;
+    color:white;
+}
+.item:hover{
+    padding: 3px;
+    background-color:rgb(71, 71, 71);
+    border-radius: 10%;
+    transition: 1s;
 }
 .navBar-logo{
-text-align: center;
-color: black;
-font-size: 10px;
-font-weight: bold;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
 }
