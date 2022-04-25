@@ -1,0 +1,9 @@
+.cart-item-wrapper {
+    width: 30px;
+    height: 30px;
+    color: rgb(255, 255, 255);
+}
+
+.cart-item-wrapper:hover {
+    color: rgb(166, 166, 226);
+}
