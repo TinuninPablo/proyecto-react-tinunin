@@ -1,12 +1,20 @@
 import React, {useState} from 'react'
 
-function ItemCount() {
-    const [count,setCount]= useState(0);
-function handleAdd() {
-    setCount(count +1)
+function ItemCount({stock, initial}) {
+    const [count,setCount]= useState(initial);
+
+const handleAdd = () => {
+    const newValue =count + 1;
+    if(newValue <= stock ){
+        setCount(newValue)
+    }
 }
-function handleSubstract(){
-    setCount(count - 1 )
+
+const handleSubstract = () =>{
+   const newValue = count - 1;
+   if(newValue >= initial){
+       setCount(newValue)
+   }
 }
   return (
     <div>

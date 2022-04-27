@@ -1,4 +1,5 @@
 .box{
-    height: 1000px;
+    width: auto;
+    height: 100%;
     background-color: rgb(255, 255, 255);
 }

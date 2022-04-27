@@ -1,9 +1,14 @@
 .cart-item-wrapper {
-    width: 30px;
-    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5%;
+    width: 35px;
+    height: 35px;
     color: rgb(255, 255, 255);
 }
 
 .cart-item-wrapper:hover {
-    color: rgb(166, 166, 226);
+    color: rgb(148, 148, 148);
+    transition: 2s;
 }

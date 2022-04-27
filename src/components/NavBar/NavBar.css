@@ -1,27 +1,8 @@
 div{
-    background-color: rgb(70, 70, 70);
     width: 100%;
+    height: 100%;
 }
 
-.nav{
-    list-style-type: none;
-    margin: 1%;
-    padding: 0;
-    display: flex;
-    justify-content:space-evenly;
-    color:white;
-    font-size: 20px;
-}
-.item:hover{
-    padding: 3px;
-    background-color:rgb(0, 0, 0);
-    border-radius: 10%;
-    transition: 1s;
-    
-}
-.navBar-logo{
-    text-align: center;
-    color: white;
-    font-size: 35px;
-    font-weight: bold;
+.navStyles{
+    font-size: 25px;
 }
