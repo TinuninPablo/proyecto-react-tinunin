@@ -1,0 +1,73 @@
+.item-detail {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 7%;
+}
+
+.left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 5%;
+    background-color: rgb(255, 255, 255);
+}
+
+.right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(226, 224, 224);
+}
+
+.img-detail-container {
+    width: 100%;
+    height: 50%;
+}
+
+.img-detail-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.img-detail-container h2{
+    font-size: 40px;
+    font-weight: bold;
+    font-family:fantasy;
+
+}
+
+.info-container {
+    width: 100%;
+    height: 60%;
+    text-align: center;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    font-size: x-large;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.stock{
+    font-weight: 800;
+    font-size: 40px;
+    font-family:italic ;
+    
+}
+
+.count-container {
+    width: 80%;
+}
+.descripcion{
+    font-size: 25px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

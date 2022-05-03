@@ -1,43 +1,47 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
-import {Navbar,Container,Nav,NavDropdown} from 'react-bootstrap'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import{ Dropdown, DropdownItem, DropdownMenu,DropdownToggle} from 'reactstrap'
 
 function NavBar(props) {
+  const [dropdown,setDropdown]=useState(false);
+  const interaccionDropdown =()=>{
+    setDropdown(!dropdown)
+  }
     return (
-    <Navbar bg="dark" variant="dark" expand="lg">
-    <Container>
-      <Navbar.Brand href="#home" className='navStyles' >GamerStore</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
-          <Nav.Link href="#home">Productos</Nav.Link>
-          <Nav.Link href="#link">Contactanos</Nav.Link>
-          <NavDropdown title="Categorias" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Auriculares</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Camaras</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Microfonos</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4">Monitores</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.5">Mousepad</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.6">Parlantes</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.7">Ratones</NavDropdown.Item>
-          </NavDropdown>
-          <CartWidget/>
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
-       // <div className='divNav'>
-        //    <h1 className='navBar-logo'>GamerStore</h1>
-         //   <ul className='nav'>
-        //        <li><a href="#productos" className='item'>Productos</a></li>
-         //       <li><a href="#categorias" className='item'>Categorias</a></li>
-         //       <li><a href="#contactanos" className='item'>Contactanos</a></li>
-              //  <CartWidget/>
-        //    </ul>
-            
-       // </div>
+      <div className='nav-container'>
+        <Link to='/'>
+           <img
+              src='https://www.xtrafondos.com/descargar.php?id=5092&resolucion=3840x2160'
+              alt="OMG Comics"
+           />
+        </Link>
+          <ul className='nav'>
+            <li><NavLink to='/' id='nav-margin' className={nav => nav.isActive ? 'nav-active' : ''}>Productos</NavLink></li>
+            <li><NavLink to='/' id='nav-margin' className={nav => nav.isActive ? 'nav-active' : ''}> Contacto</NavLink></li>
+            <li>
+                  <Dropdown isOpen={dropdown} toggle={interaccionDropdown} >
+                    <DropdownToggle >
+                     Categorias  
+                    </DropdownToggle>
+                     
+                     <DropdownMenu>
+                       <DropdownItem><NavLink to='/category/Auriculares' className={nav => nav.isActive ? 'nav-active' : ''}>Auriculares</NavLink></DropdownItem>
+                       <DropdownItem><NavLink to='/category/Camaras' className={nav => nav.isActive ? 'nav-active' : ''}>Camaras</NavLink></DropdownItem>
+                       <DropdownItem><NavLink to='/category/Microfonos' className={nav => nav.isActive ? 'nav-active' : ''}>Microfonos</NavLink></DropdownItem>
+                       <DropdownItem><NavLink to='/category/Monitores' className={nav => nav.isActive ? 'nav-active' : ''}>Monitores</NavLink></DropdownItem>
+                       <DropdownItem><NavLink to='/category/MousePad' className={nav => nav.isActive ? 'nav-active' : ''}>Mousepad</NavLink></DropdownItem>
+                       <DropdownItem><NavLink to='/category/Parlantes' className={nav => nav.isActive ? 'nav-active' : ''}>Parlantes</NavLink></DropdownItem>
+                       <DropdownItem><NavLink to='/category/Ratones' className={nav => nav.isActive ? 'nav-active' : ''}>Ratones</NavLink></DropdownItem>
+                       <DropdownItem><NavLink to='/category/Teclado' className={nav => nav.isActive ? 'nav-active' : ''}>Teclados</NavLink></DropdownItem>
+                     </DropdownMenu>
+                  </Dropdown> 
+            </li>       
+          </ul>
+              <CartWidget/>
+      </div>
     );
 }
 

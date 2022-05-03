@@ -1,0 +1,45 @@
+.item-count-container {
+    border-radius:15px ;
+    background-color: whitesmoke;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+
+.item-count-container div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.item-count-container button {
+    width: 50%;
+    padding: 5px;
+    margin: 12px 0px;
+    border-radius: 5px;
+    color: blue;
+    background-color: rgba(107, 121, 201, 0.616);
+}
+.agregar:hover{
+    background-color: rgb(117, 131, 255);
+    transition: 2s;
+}
+
+.item-count-container div button {
+    background-color: whitesmoke;
+    color: rgb(29, 49, 163);
+    border: none;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.item-count-container div input {
+    width: 32%;
+    padding: 5px;
+    text-align: center;
+}
+
+.item-count-container div button:hover {
+    color: rgb(255, 0, 0);
+}
