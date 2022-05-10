@@ -15,12 +15,14 @@
     justify-content: start;
     padding-top: 5%;
     background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(175, 175, 175);
 }
 
 .right {
     width: 50%;
     height: 100%;
     display: flex;
+    border: 1px solid rgb(175, 175, 175);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -33,15 +35,15 @@
 }
 
 .img-detail-container img {
-    width: 100%;
+    width: 80%;
     height: 100%;
     object-fit: contain;
 }
-.img-detail-container h2{
+.info-container h2{
     font-size: 40px;
     font-weight: bold;
     font-family:fantasy;
-
+    border-bottom: 2px solid rgb(175, 175, 175);
 }
 
 .info-container {
@@ -61,12 +63,16 @@
     font-weight: 800;
     font-size: 40px;
     font-family:italic ;
-    
+}
+.count-container{
+    width:80%;
+}
+.count-container a {
+    color: black;
+    text-decoration: none;
+    padding: 20px;
 }
 
-.count-container {
-    width: 80%;
-}
 .descripcion{
     font-size: 25px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

@@ -1,23 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css'
 
 function ItemDetail({ item }) {
+    const [cantidadDeProductos, setCantidadDeProductos] = useState(null);
+    function addHandler(quantityToAdd) {
+        setCantidadDeProductos(quantityToAdd);
+    }
+   
+
   return (
     <div className='item-detail'>
         <div className='left'>
             <div className='img-detail-container'>
-            <h2>{ item?.title }</h2>
                 <img src={ item?.imageUrl } alt='Imagen del producto' />
-                <p className='stock'>{ item?.price }</p>   
+                <p className='stock'>Precio: { item?.price }</p>   
             </div>
         </div>
         <div className='right'>
             <div className='info-container'>
+                <h2>{ item?.title }</h2>
                 <p className='descripcion'>{ item?.descripcion} </p>
                 <p className='stock'>Stock: {item?.stock} </p>
                 <div className='count-container'>
-                    <ItemCount initial={0} stock={item.stock} onAdd={() => {}} />
+                {cantidadDeProductos ?
+                         <button><Link to='/cart'>Agregar al carro ({ cantidadDeProductos } productos)</Link></button> :
+                         <ItemCount initial={0} stock={item.stock} onAdd={addHandler} />
+                    }
                 </div>
             </div>
         </div>

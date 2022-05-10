@@ -24,7 +24,7 @@ function NavBar(props) {
             <li>
                   <Dropdown isOpen={dropdown} toggle={interaccionDropdown} >
                     <DropdownToggle >
-                     Categorias  
+                     Categorias ▽  
                     </DropdownToggle>
                      
                      <DropdownMenu>

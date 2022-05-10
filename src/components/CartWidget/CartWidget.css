@@ -1,12 +1,19 @@
 .cart-item-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content:start;
     align-items: center;
+    box-sizing: border-box;
+    color: #393e46;
+    font-family: Lato,sans-serif;
+    list-style-type: none;
     margin: 30px;
-    width: 35px;
-    height: 35px;
-    color: rgb(255, 255, 255);
+    margin-right:25px;
+    padding: 10px 5px 10px 30px;
+    background-color: white;
+    text-decoration: none;
+    border-radius: 5px;
 }
+
 
 .cart-item-wrapper:hover {
     color: rgb(148, 148, 148);
