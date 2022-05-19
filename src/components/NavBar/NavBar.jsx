@@ -1,11 +1,31 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
+import { collection, getDocs, getFirestore} from 'firebase/firestore'
 import './NavBar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import{ Dropdown, DropdownItem, DropdownMenu,DropdownToggle} from 'reactstrap'
 
+function getCategories(){
+const db = getFirestore() ;
+
+const itemsCollection = collection(db,'items');
+
+return getDocs(itemsCollection)
+}
+
 function NavBar(props) {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    getCategories()
+    .then(snapshot => {
+      const categories = snapshot.docs.map(doc =>doc.data().category)
+      setCategories(categories)
+      console.log(categories);
+    })
+  },[])
+
   const [dropdown,setDropdown]=useState(false);
   const interaccionDropdown =()=>{
     setDropdown(!dropdown)
@@ -25,18 +45,17 @@ function NavBar(props) {
             <li>
                   <Dropdown isOpen={dropdown} toggle={interaccionDropdown} >
                     <DropdownToggle >
-                     Buscar por precios ▽  
-                    </DropdownToggle>
-                     
+                     Categorias ▽  
+                    </DropdownToggle>                   
                      <DropdownMenu>
-                       <DropdownItem><NavLink to='/category/Auriculares' className={nav => nav.isActive ? 'nav-active' : ''}>Auriculares</NavLink></DropdownItem>
-                       <DropdownItem><NavLink to='/category/Camaras' className={nav => nav.isActive ? 'nav-active' : ''}>Camaras</NavLink></DropdownItem>
-                       <DropdownItem><NavLink to='/category/Microfonos' className={nav => nav.isActive ? 'nav-active' : ''}>Microfonos</NavLink></DropdownItem>
-                       <DropdownItem><NavLink to='/category/Monitores' className={nav => nav.isActive ? 'nav-active' : ''}>Monitores</NavLink></DropdownItem>
-                       <DropdownItem><NavLink to='/category/MousePad' className={nav => nav.isActive ? 'nav-active' : ''}>Mousepad</NavLink></DropdownItem>
-                       <DropdownItem><NavLink to='/category/Parlantes' className={nav => nav.isActive ? 'nav-active' : ''}>Parlantes</NavLink></DropdownItem>
-                       <DropdownItem><NavLink to='/category/Ratones' className={nav => nav.isActive ? 'nav-active' : ''}>Ratones</NavLink></DropdownItem>
-                       <DropdownItem><NavLink to='/category/Teclado' className={nav => nav.isActive ? 'nav-active' : ''}>Teclados</NavLink></DropdownItem>
+                       <DropdownItem><NavLink to='/category/auriculares' className={nav => nav.isActive ? 'nav-active' : ''}>Auriculares</NavLink></DropdownItem>
+                       <DropdownItem><NavLink to='/category/camaras' className={nav => nav.isActive ? 'nav-active' : ''}>Camaras</NavLink></DropdownItem>
+                       <DropdownItem><NavLink to='/category/microfonos' className={nav => nav.isActive ? 'nav-active' : ''}>Microfonos</NavLink></DropdownItem>
+                       <DropdownItem><NavLink to='/category/monitores' className={nav => nav.isActive ? 'nav-active' : ''}>Monitores</NavLink></DropdownItem>
+                       <DropdownItem><NavLink to='/category/mousepad' className={nav => nav.isActive ? 'nav-active' : ''}>Mousepad</NavLink></DropdownItem>
+                       <DropdownItem><NavLink to='/category/parlantes' className={nav => nav.isActive ? 'nav-active' : ''}>Parlantes</NavLink></DropdownItem>
+                       <DropdownItem><NavLink to='/category/ratones' className={nav => nav.isActive ? 'nav-active' : ''}>Ratones</NavLink></DropdownItem>
+                       <DropdownItem><NavLink to='/category/teclado' className={nav => nav.isActive ? 'nav-active' : ''}>Teclados</NavLink></DropdownItem>
                      </DropdownMenu>
                   </Dropdown> 
             </li>       

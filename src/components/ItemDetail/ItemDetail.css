@@ -77,3 +77,10 @@
     font-size: 25px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+.button-cart-buy {
+    background-color: rgb(160, 133, 255);
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 2%;
+}

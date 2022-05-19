@@ -5,7 +5,6 @@ import './Item.css';
 
 
 function Item({ item }) {
-
   return (
     <div className='card'>
         <div className='header'>{ item?.title }</div>

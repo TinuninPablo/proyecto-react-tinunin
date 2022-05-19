@@ -27,9 +27,9 @@ function ItemDetail({ item }) {
                 <div className='count-container'>
                     <ItemCount initial={0} stock={item.stock} onAdd={addHandler} />
                     {cartCtx.isInCart(item.id) &&
-                        <button className='button-brown mt'>
-                            <Link to='/cart'>
-                                Terminar compra ({ cartCtx.getCartQuantity() } items)
+                        <button className='button-cart-buy '>
+                            <Link to='/cart'className='button-letter-buy'>
+                                Ir al Carrito ({ cartCtx.getCartQuantity() } items)
                             </Link>
                         </button>
                     }
@@ -39,5 +39,4 @@ function ItemDetail({ item }) {
     </div>
     )
 }
-console.log(ItemDetail);
 export default ItemDetail
