@@ -1,21 +1,23 @@
 .cart-item-wrapper {
-    display: flex;
-    justify-content:start;
-    align-items: center;
+    position: relative;
     box-sizing: border-box;
-    color: #393e46;
-    font-family: Lato,sans-serif;
     list-style-type: none;
     margin: 30px;
-    margin-right:25px;
-    padding: 10px 5px 10px 30px;
-    background-color: white;
+    padding: 5px 30px 5px 1px;
     text-decoration: none;
     border-radius: 5px;
 }
+.carrito{
+    color: #ffffff;
+}
 
 
-.cart-item-wrapper:hover {
-    color: rgb(148, 148, 148);
-    transition: 1s;
+.carrito:hover {
+    color: rgb(145, 28, 28);
+}
+
+.cart-bubble {
+    position: relative;
+    bottom: 80%;
+    left: 100%;
 }

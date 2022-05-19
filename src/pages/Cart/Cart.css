@@ -1,0 +1,48 @@
+.cart {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cart .total-container {
+    padding: 20px;
+}
+
+.cart .total-container p {
+    font-weight: bold;
+    font-size: x-large;
+    color: rgb(0, 0, 0);
+    background-color: rgb(179, 124, 124);
+    padding: 15px;
+    border-radius: 25px;
+}
+
+.cart .total-container button {
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: brown;
+   
+}
+
+.cart h2 {
+    color: rgb(0, 0, 0);
+}
+
+.button-carrito {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(68, 68, 68);
+}
+.button-carrito:hover{
+    background-color: rgb(73, 73, 73);
+}
+.button-carrito a {
+    text-decoration: none;
+    color: white;
+}

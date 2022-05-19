@@ -9,6 +9,7 @@ function NavBar(props) {
   const [dropdown,setDropdown]=useState(false);
   const interaccionDropdown =()=>{
     setDropdown(!dropdown)
+
   }
     return (
       <div className='nav-container'>
@@ -24,7 +25,7 @@ function NavBar(props) {
             <li>
                   <Dropdown isOpen={dropdown} toggle={interaccionDropdown} >
                     <DropdownToggle >
-                     Categorias ▽  
+                     Buscar por precios ▽  
                     </DropdownToggle>
                      
                      <DropdownMenu>
