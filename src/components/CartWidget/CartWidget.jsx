@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Bubble from '../Bubble/Bubble';
-import CartContext from '../../store/cart-context';
+import CartContext from '../../CartContext/cart-context';
 import './CartWidget.css';
 
 function CartWidget() {

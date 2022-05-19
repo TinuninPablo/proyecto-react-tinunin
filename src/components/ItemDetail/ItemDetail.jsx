@@ -1,6 +1,6 @@
 import React, { useContext} from 'react';
 import { Link } from 'react-router-dom';
-import CartContext from '../../store/cart-context';
+import CartContext from '../../CartContext/cart-context';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css'
 
@@ -39,5 +39,5 @@ function ItemDetail({ item }) {
     </div>
     )
 }
-
+console.log(ItemDetail);
 export default ItemDetail

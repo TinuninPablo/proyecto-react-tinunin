@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { CartContextProvider } from './store/cart-context';
+import { CartContextProvider } from './CartContext/cart-context';
 import { initializeApp } from "firebase/app";
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCLTb8dtP4vjviiupIhSo9Dz6EgtM21Rkc",
@@ -15,7 +16,10 @@ const firebaseConfig = {
   appId: "1:22492442753:web:dee9acffe533b8f08c5d80"
 };
 
-initializeApp(firebaseConfig);
+const app=initializeApp(firebaseConfig);
+const db = getFirestore(app)
+
+export default db
 
 ReactDOM.render(
   <React.StrictMode>
@@ -28,7 +32,5 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 
