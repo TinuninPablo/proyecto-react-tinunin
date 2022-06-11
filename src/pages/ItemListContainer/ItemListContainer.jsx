@@ -21,7 +21,8 @@ function ItemListContainer({ greeting }) {
   const { categoryId } = useParams();
 
   useEffect(() => {
-    getProducts(categoryId)
+   
+      getProducts(categoryId)
       .then(snapshot => {
         setProducts(snapshot.docs.map(doc => {
           return { ...doc.data(), id: doc.id }
@@ -30,6 +31,8 @@ function ItemListContainer({ greeting }) {
       .catch(err => {
         console.log(err);
       });
+      console.log(products.filter(prod=> prod.category==='auriculares'))
+      setProducts(products.filter(prod=> prod.category===categoryId))
   }, [categoryId]);
 
   return (
