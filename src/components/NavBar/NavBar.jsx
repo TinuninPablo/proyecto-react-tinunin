@@ -22,7 +22,6 @@ function NavBar(props) {
     .then(snapshot => {
       const categories = snapshot.docs.map(doc =>doc.data().category)
       setCategories(categories)
-      console.log(categories);
     })
   },[])
 

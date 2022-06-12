@@ -21,18 +21,26 @@ function ItemListContainer({ greeting }) {
   const { categoryId } = useParams();
 
   useEffect(() => {
-   
-      getProducts(categoryId)
-      .then(snapshot => {
-        setProducts(snapshot.docs.map(doc => {
-          return { ...doc.data(), id: doc.id }
-        }));
-      })
-      .catch(err => {
-        console.log(err);
+   getProducts(categoryId)
+   .then((snapshot)=>{
+    if (categoryId != null){
+      const allProducts = snapshot.docs.map((doc)=>{
+        return {...doc.data(), id: doc.id};
       });
-      console.log(products.filter(prod=> prod.category==='auriculares'))
-      setProducts(products.filter(prod=> prod.category===categoryId))
+      setProducts(
+        allProducts.filter((prod)=> prod.category === categoryId)
+      );
+    }else{
+      setProducts(
+        snapshot.docs.map((doc)=>{
+          return{ ...doc.data(),id: doc.id}
+        })
+      );
+    }
+   }) 
+   .catch((err)=>{
+    console.log(err)
+   });
   }, [categoryId]);
 
   return (
